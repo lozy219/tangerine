@@ -14,3 +14,7 @@
 $app->get('/', function () use ($app) {
     return $app->welcome();
 });
+
+$app->get('/users', function() {
+    return \App\Models\User::all();
+});

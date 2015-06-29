@@ -450,4 +450,7 @@ return array(
     'TestCase' => $baseDir . '/tests/TestCase.php',
     'Text_Template' => $vendorDir . '/phpunit/php-text-template/src/Template.php',
     'UserTableSeeder' => $baseDir . '/database/seeds/UserTableSeeder.php',
+    'ClientTableSeeder' => $baseDir . '/database/seeds/ClientTableSeeder.php',
+    'ProjectTableSeeder' => $baseDir . '/database/seeds/ProjectTableSeeder.php',
+    'ReleaseTableSeeder' => $baseDir . '/database/seeds/ReleaseTableSeeder.php',
 );

@@ -12,13 +12,18 @@ class UserTableSeeder extends Seeder {
 	 */
 	public function run() {
 		User::create([
-			'name' => 'James Tan',
-			'email' => 'james@codigo.sg',
+			'name' => 'Jiang Zemin',
+			'email' => 'haha@qq.com',
 			'password' => '123456',
 		 ]);
 		User::create([
-			'name' => 'Eric Si',
-			'email' => 'eric.si@codigo.sg',
+			'name' => 'Song Zuying',
+			'email' => 'echx.io@gmail.com',
+			'password' => '123456',
+		]);
+		User::create([
+			'name' => 'Wang Jinghan',
+			'email' => 'phantom.there@gmail.com',
 			'password' => '123456',
 		]);
 	}

@@ -9,23 +9,24 @@ class Project extends Model {
 	 *
 	 * @var string
 	 */
-    protected $table = 'projects';
+	protected $table = 'projects';
 
-    /**
-     * Indicates if the model should be timestamped.
-     *
-     * @var bool
-     */
-    public $timestamps = true;
+	/**
+	 * Indicates if the model should be timestamped.
+	 *
+	 * @var bool
+	 */
+	public $timestamps = true;
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
-    protected $fillable = [
-        'title',
-        'logo',
-        'tag'
-    ];
+	/**
+	 * The attributes that are mass assignable.
+	 *
+	 * @var array
+	 */
+	protected $fillable = [
+		'title',
+		'logo',
+		'tag',
+		'client_id'
+	];
 }

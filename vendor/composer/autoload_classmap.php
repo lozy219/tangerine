@@ -6,11 +6,11 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'CreateClientsTable' => $baseDir . '/database/migrations/2015_06_25_100059_create_clients_table.php',
-    'CreatePermissionsTable' => $baseDir . '/database/migrations/2015_06_25_100132_create_permissions_table.php',
-    'CreateProjectsTable' => $baseDir . '/database/migrations/2015_06_25_044210_create_projects_table.php',
-    'CreateReleasesTable' => $baseDir . '/database/migrations/2015_06_25_084149_create_releases_table.php',
-    'CreateUsersTable' => $baseDir . '/database/migrations/2015_06_25_074014_create_users_table.php',
+    'CreateClientsTable' => $baseDir . '/database/migrations/2015_06_29_035953_create_clients_table.php',
+    'CreatePermissionsTable' => $baseDir . '/database/migrations/2015_06_29_040047_create_permissions_table.php',
+    'CreateProjectsTable' => $baseDir . '/database/migrations/2015_06_29_040012_create_projects_table.php',
+    'CreateReleasesTable' => $baseDir . '/database/migrations/2015_06_29_040035_create_releases_table.php',
+    'CreateUsersTable' => $baseDir . '/database/migrations/2015_06_29_040018_create_users_table.php',
     'DatabaseSeeder' => $baseDir . '/database/seeds/DatabaseSeeder.php',
     'ExampleTest' => $baseDir . '/tests/ExampleTest.php',
     'File_Iterator' => $vendorDir . '/phpunit/php-file-iterator/src/Iterator.php',

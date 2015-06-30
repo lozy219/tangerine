@@ -1,0 +1,8 @@
+@import "../constant";
+
+.header {
+	height: $header-height;
+	width: 100vw;
+	position: fixed;
+	background-color: $header-color;
+}

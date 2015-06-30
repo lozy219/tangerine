@@ -1,0 +1,9 @@
+@import "../constant";
+
+.side-menu {
+	width: $side-menu-width;
+	height: 100vh;
+	position: fixed;
+	top: $header-height;
+	background-color: $side-menu-color;
+}

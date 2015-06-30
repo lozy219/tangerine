@@ -6,6 +6,7 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'ClientTableSeeder' => $baseDir . '/database/seeds/ClientTableSeeder.php',
     'CreateClientsTable' => $baseDir . '/database/migrations/2015_06_29_035953_create_clients_table.php',
     'CreatePermissionsTable' => $baseDir . '/database/migrations/2015_06_29_040047_create_permissions_table.php',
     'CreateProjectsTable' => $baseDir . '/database/migrations/2015_06_29_040012_create_projects_table.php',
@@ -411,6 +412,8 @@ return array(
     'PHP_Token_XOR_EQUAL' => $vendorDir . '/phpunit/php-token-stream/src/Token.php',
     'PHP_Token_YIELD' => $vendorDir . '/phpunit/php-token-stream/src/Token.php',
     'PHP_Token_YIELD_FROM' => $vendorDir . '/phpunit/php-token-stream/src/Token.php',
+    'ProjectTableSeeder' => $baseDir . '/database/seeds/ProjectTableSeeder.php',
+    'ReleaseTableSeeder' => $baseDir . '/database/seeds/ReleaseTableSeeder.php',
     'SebastianBergmann\\Comparator\\ArrayComparator' => $vendorDir . '/sebastian/comparator/src/ArrayComparator.php',
     'SebastianBergmann\\Comparator\\Comparator' => $vendorDir . '/sebastian/comparator/src/Comparator.php',
     'SebastianBergmann\\Comparator\\ComparisonFailure' => $vendorDir . '/sebastian/comparator/src/ComparisonFailure.php',
@@ -450,7 +453,4 @@ return array(
     'TestCase' => $baseDir . '/tests/TestCase.php',
     'Text_Template' => $vendorDir . '/phpunit/php-text-template/src/Template.php',
     'UserTableSeeder' => $baseDir . '/database/seeds/UserTableSeeder.php',
-    'ClientTableSeeder' => $baseDir . '/database/seeds/ClientTableSeeder.php',
-    'ProjectTableSeeder' => $baseDir . '/database/seeds/ProjectTableSeeder.php',
-    'ReleaseTableSeeder' => $baseDir . '/database/seeds/ReleaseTableSeeder.php',
 );

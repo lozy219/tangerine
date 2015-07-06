@@ -1,7 +1,17 @@
 @import "header";
 @import "logo";
 @import "side-menu";
+@import "search";
+
+* {
+	font-family: 'Roboto', sans-serif !important;
+}
 
 body {
 	background-color: $body-color;
+
+	.main {
+		margin-top: $header-height + $container-padding;
+		padding-left: $side-menu-width + $container-padding;
+	}
 }

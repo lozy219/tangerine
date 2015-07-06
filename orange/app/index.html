@@ -12,6 +12,7 @@
 		<!-- endbuild -->
 		<!-- build:css(.tmp) styles/main.css -->
 		<link rel="stylesheet" href="styles/index.css">
+		<link href='http://fonts.googleapis.com/css?family=Roboto:900,900italic,500,400italic,100,700italic,300,700,500italic,100italic,300italic,400' rel='stylesheet' type='text/css'>
 		<!-- endbuild -->
 	</head>
 	<body>
@@ -24,13 +25,17 @@
 			<div class="logo">
 				<img src="images/codigo.png" alt="logo">
 			</div>
+
+			<div class="search-bar">
+				<input type="text" class="form-control" placeholder="SEARCH" ng-model="search[filter]">
+			</div>
 		</div>
 
 		<div class="side-menu">
 
 		</div>
 
-		<div ng-view>
+		<div class="main" ng-view>
 		</div>
 
 		<div class="footer">

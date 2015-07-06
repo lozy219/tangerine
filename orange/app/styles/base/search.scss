@@ -1,0 +1,21 @@
+@import "../constant";
+
+.search-bar {
+	width: calc(100% - #{$side-menu-width});
+	height: $header-height;
+	display: table;
+
+	input {
+		background-color: transparent;
+		border: none;
+		height: inherit;
+		font-size: 30px;
+		font-weight: 100;
+		padding: 0px $search-padding;
+
+		&:hover, &:focus {
+			outline: none;
+			box-shadow: none;
+		}
+	}
+}

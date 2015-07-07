@@ -23,14 +23,15 @@ angular
 	.config(function ($routeProvider) {
 		$routeProvider
 			.when('/', {
-				templateUrl: 'views/default.html',
-				controller: 'MainCtrl'
+				templateUrl: 'views/home/home.html',
+				controller: 'HomeCtrl',
+				css: 'styles/home/home.css'
 			})
-			.when('/upload', {
-				templateUrl: 'views/upload.html',
-				controller: 'UploadCtrl',
-				css: 'styles/upload/upload.css'
-			})
+			// .when('/upload', {
+			// 	templateUrl: 'views/upload.html',
+			// 	controller: 'UploadCtrl',
+			// 	css: 'styles/upload/upload.css'
+			// })
 			.otherwise({
 				redirectTo: '/'
 			});

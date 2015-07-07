@@ -26,7 +26,14 @@
 			</div>
 		</div>
 		<div class="row" ng-if="Utils.keys(project.release).length == 1">
-			bb
+			<div class="col-xs-12 full-cell">
+				<div class="version-number">
+					v3.21
+				</div>
+				<div class="logo" ng-class="{ios:'logo-ios', android:'logo-android'}[getPlatform(project)]">
+					<img ng-src="images/upload/{{getPlatform(project)}}.png">
+				</div>
+			</div>
 		</div>
 	</div>
 	

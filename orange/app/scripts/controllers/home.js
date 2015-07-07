@@ -109,4 +109,16 @@ angular.module('orangeApp')
 				}
 			},
 		];
+
+		$scope.getPlatform = function(project) {
+			var keys = Object.keys(project.release);
+			if (keys.length == 2) {
+				return 'cross';
+			}
+			if (keys.length == 1) {
+				return keys[0].toLowerCase();
+			}
+
+			return undefined;
+		};
 	});

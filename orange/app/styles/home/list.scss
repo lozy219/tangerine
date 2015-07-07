@@ -8,6 +8,9 @@
 	}
 
 	.project-cell {
+		$image-width: 46px;
+		$image-border-width: 1px;
+
 		background-color: $project-cell-color;
 		margin-bottom: 25px;
 		padding: 13px;
@@ -24,8 +27,8 @@
 				margin-top: 10px;
 
 				img {
-					height: 46px;
-					border: 1px solid;
+					height: $image-width;
+					border: $image-border-width solid;
 					border-radius: 5px;
 				}
 			}
@@ -63,6 +66,18 @@
 
 				img {
 					float: left;
+				}
+			}
+
+			.full-cell {
+				text-align: center;
+
+				.version-number {
+					float: left;
+				}
+
+				img {
+					margin-left: calc((-#{$image-width} - #{$container-padding}) / 2 - 2 * #{$image-border-width});
 				}
 			}
 		}

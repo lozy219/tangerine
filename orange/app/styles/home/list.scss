@@ -6,4 +6,65 @@
 	.title-subsection {
 		font-weight: 600;
 	}
+
+	.project-cell {
+		background-color: $project-cell-color;
+		margin-bottom: 25px;
+		padding: 13px;
+		color: white;
+
+		.row-title {
+			font-size: 24px;
+			font-weight: 100;
+		}
+
+		.row-platform {
+			$logo-distance: 12px;
+			.logo {
+				margin-top: 10px;
+
+				img {
+					height: 46px;
+					border: 1px solid;
+					border-radius: 5px;
+				}
+			}
+
+			.logo-ios {
+				img {
+					padding: 10px 13px;
+	  			}
+			}
+
+			.logo-android {
+				img {
+					padding: 10px 11px;
+				}
+			}
+
+			.left-half {
+				padding-right: calc(#{$logo-distance} / 2);
+
+				.version-number {
+					float: left;
+				}
+
+				img {
+					float: right;
+				}
+			}
+
+			.right-half {
+				padding-left: calc(#{$logo-distance} / 2);
+
+				.version-number {
+					float: right;	
+				}
+
+				img {
+					float: left;
+				}
+			}
+		}
+	}
 }

@@ -105,16 +105,6 @@ angular.module('orangeApp')
 							id: 2,
 							version: '1.8.5'
 						}
-					],
-					android: [
-						{
-							id: 3,
-							version: '2.3.6'
-						},
-						{
-							id: 4,
-							version: '1.2.1'
-						}
 					]
 				}
 			},

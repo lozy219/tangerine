@@ -1,4 +1,33 @@
 <div class="project-cell">
-	{{ project.title }}
-	{{ project.client_id }}
+	<div class="row-client">
+		{{ project.client | uppercase }}
+	</div>
+	<div class="row-title">
+		{{ project.title | uppercase }}
+	</div>
+	<div class="row-platform">
+		<div class="row" ng-if="Utils.keys(project.release).length == 2">
+			<div class="col-xs-6 ios-half left-half">
+				<div class="version-number">
+					v1.23
+				</div>
+				<div class="logo logo-ios">
+					<img src="images/upload/ios.png">
+				</div>
+			</div>
+
+			<div class="col-xs-6 android-half right-half">
+				<div class="version-number">
+					v3.21
+				</div>
+				<div class="logo logo-android">
+					<img src="images/upload/android.png">
+				</div>
+			</div>
+		</div>
+		<div class="row" ng-if="Utils.keys(project.release).length == 1">
+			bb
+		</div>
+	</div>
+	
 </div>

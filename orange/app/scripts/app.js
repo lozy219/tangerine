@@ -65,4 +65,9 @@ angular
 				}
 			};
 		}
-	]);
+	])
+	.run(function($rootScope) {
+		$rootScope.Utils = {
+			keys: Object.keys
+		}
+	});

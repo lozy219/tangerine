@@ -15,3 +15,17 @@ body {
 		padding-left: $side-menu-width + $container-padding;
 	}
 }
+
+@media (min-width: 1200px) {
+	.main {
+		width: calc(1200px - 2 * #{$container-padding});
+		margin-right: auto;
+		margin-left: auto;
+	}
+}
+
+@media (max-width: 1200px) {
+	.main {
+		width: calc(100% - #{$container-padding});
+	}
+}

@@ -1,2 +1,42 @@
 @import "upload";
 @import "list";
+
+.masonry, .masonry li { /* apply before masonry add class */
+    position: absolute; /* important to add it before enter animation start */
+    
+    -webkit-transition-duration: .7s;
+    transition-duration: .7s;
+    
+    -webkit-transition-property: all;
+    transition-property: all;
+}
+
+.masonry .masonry-enter { /* limit animated properties for entering elements */
+    -webkit-transition-property: -webkit-transform, opacity;
+    transition-property: transform, opacity;
+}
+
+.masonry-enter,
+.masonry-leave.masonry-leave-active {
+    opacity: 0;
+    -webkit-transform: scale(0.1);
+    transform: scale(0.1);
+}
+
+.masonry-leave,
+.masonry-enter.masonry-enter-active {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+}
+
+.masonry li {
+	display: inline-block;
+	width: 33.333%;
+	height: 134px;
+	padding: 5px;
+}
+
+.masonry {
+	padding: 0px !important;
+}

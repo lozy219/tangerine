@@ -9,5 +9,5 @@
  */
 angular.module('orangeApp')
 	.controller('MainCtrl', function ($scope) {
-		
+		$scope.a = 'a';
 	});

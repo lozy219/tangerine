@@ -4,6 +4,9 @@
 	</div>
 	<div class="row-title">
 		{{ project.title | uppercase }}
+
+		<span class="cell-arrow" ng-click="isExpanded = !isExpanded" ng-class="{true: 'dropup-arrow', false: 'dropdown-arrow'}[isExpanded]">
+		</span>
 	</div>
 	<div class="row-platform">
 		<div class="row" ng-if="Utils.keys(project.release).length == 2">
@@ -30,7 +33,7 @@
 				<div class="version-number">
 					v3.21
 				</div>
-				<div class="logo" ng-class="{ios:'logo-ios', android:'logo-android'}[getPlatform(project)]">
+				<div class="logo" ng-class="{ios: 'logo-ios', android: 'logo-android'}[getPlatform(project)]">
 					<img ng-src="images/upload/{{getPlatform(project)}}.png">
 				</div>
 			</div>

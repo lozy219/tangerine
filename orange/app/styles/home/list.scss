@@ -15,6 +15,39 @@
 		margin-bottom: 25px;
 		padding: 13px;
 		color: white;
+		line-height: 155%;
+
+		.cell-arrow {
+			width: 0; 
+			height: 0; 
+			border-left: 9px solid transparent;
+			border-right: 9px solid transparent;
+			float: right;
+			margin-top: -15px;
+			cursor: pointer;
+
+			transition: border-width 0.5s ease-in-out;
+
+			&:focus {
+				outline: none;
+			}
+		}
+
+		.dropdown-arrow {
+			border-top: 15px solid white;
+
+			&:hover {
+				border-top: 15px solid $body-color;
+			}
+		}
+
+		.dropup-arrow {
+			border-bottom: 15px solid white;
+
+			&:hover {
+				border-bottom: 15px solid $body-color;
+			}
+		}
 
 		.row-title {
 			font-size: 24px;

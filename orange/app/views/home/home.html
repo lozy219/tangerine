@@ -9,7 +9,7 @@
 		</div>
 
 		<ul masonry="true">
-			<li ng-repeat="project in projects" ng-init="isExpanded = false">
+			<li class="animate-cell" ng-repeat="project in projects | filter : {title : titleFilter}" ng-init="isExpanded = false">
 				<div ng-include="'views/home/project-cell.html'">
 				</div>
 			</li>

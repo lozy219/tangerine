@@ -71,9 +71,9 @@ angular
 		return {
 			compile: function(element, attrs) {
 				// auto add animation to brick element
-				var animation = attrs.ngAnimate || 'masonry';
+				// var animation = attrs.ngAnimate || 'masonry';
 				var $brick = element.children();
-				$brick.attr('ng-animate', animation);
+				// $brick.attr('ng-animate', animation);
 				
 				// generate item selector (exclude leaving items)
 				var type = $brick.prop('tagName');
@@ -112,7 +112,8 @@ angular
 									
 									// Wait inside directives to render
 									setTimeout(function () {
-										element.masonry('reload');
+										element.masonry('reloadItems');
+										element.masonry();
 									});
 								});
 							});

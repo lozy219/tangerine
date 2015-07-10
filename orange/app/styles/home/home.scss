@@ -24,3 +24,11 @@
 .expanded-cell {
 	height: 230px !important;
 }
+
+.animate-cell {
+	-webkit-transition: height 1s; 
+	-moz-transition: height 1s; 
+	-ms-transition: height 1s; 
+	-o-transition: height 1s; 
+	transition: height 1s;  
+}

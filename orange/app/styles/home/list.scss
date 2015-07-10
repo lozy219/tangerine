@@ -10,6 +10,11 @@
 	.project-cell {
 		$image-width: 46px;
 		$image-border-width: 1px;
+		-webkit-transition: height 1s; 
+		-moz-transition: height 1s; 
+		-ms-transition: height 1s; 
+		-o-transition: height 1s; 
+		transition: height 1s;  
 
 		background-color: $project-cell-color;
 		margin-bottom: 25px;

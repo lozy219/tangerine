@@ -73,11 +73,12 @@ angular
 				// auto add animation to brick element
 				// var animation = attrs.ngAnimate || 'masonry';
 				var $brick = element.children();
+				attrs = attrs;
 				// $brick.attr('ng-animate', animation);
 				
 				// generate item selector (exclude leaving items)
 				var type = $brick.prop('tagName');
-				var itemSelector = type+':not([class$="-leave-active"])';
+				var itemSelector = type + ':not([class$="-leave-active"])';
 				
 				return function (scope, element, attrs) {
 					var options = angular.extend({

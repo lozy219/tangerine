@@ -2,32 +2,8 @@
 @import "list";
 
 .masonry, .masonry li { /* apply before masonry add class */
-    position: absolute; /* important to add it before enter animation start */
-    
-    -webkit-transition-duration: 1s;
-    transition-duration: 1s;
-    
-    -webkit-transition-property: all;
-    transition-property: all;
-}
-
-.masonry .animate-cell.ng-enter { /* limit animated properties for entering elements */
-    -webkit-transition-property: -webkit-transform, opacity;
-    transition-property: transform, opacity;
-}
-
-.animate-cell.ng-enter,
-.animate-cell.ng-leave.animate-cell.ng-leave-active {
-    opacity: 0;
-    -webkit-transform: scale(0.1);
-    transform: scale(0.1);
-}
-
-.animate-cell.ng-leave,
-.animate-cell.ng-enter.animate-cell.ng-enter-active {
-    opacity: 1;
-    -webkit-transform: scale(1);
-    transform: scale(1);
+	position: absolute; /* important to add it before enter animation start */
+ 
 }
 
 .masonry li {

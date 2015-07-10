@@ -82,7 +82,8 @@ angular
 				
 				return function (scope, element, attrs) {
 					var options = angular.extend({
-						itemSelector: itemSelector
+						itemSelector: itemSelector,
+						layoutMode: 'masonryColumnShift'
 					}, scope.$eval(attrs.masonry));
 					
 					// try to infer model from ngRepeat
@@ -99,7 +100,13 @@ angular
 					// Wait inside directives to render
 					setTimeout(function () {
 						element.masonry(options);
-						
+
+						angular.element(element[0].children).on('click', function () {
+							console.log('a');
+							angular.element(this).toggleClass('expanded-cell');
+							setTimeout(function() {element.masonry('layout');}, 200);
+						});
+
 						element.on('$destroy', function () {
 							element.masonry('destroy');
 						});

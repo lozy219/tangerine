@@ -26,6 +26,8 @@
 
 	.project-cell {
 		min-height: 258px;
+		z-index: 2;
+		position: relative;
 	}
 }
 

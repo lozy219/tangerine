@@ -119,6 +119,82 @@
 					margin-left: calc((-#{$image-width} - #{$container-padding}) / 2 - 2 * #{$image-border-width});
 				}
 			}
+
+
+
+
+
+
+			.releases {
+				height: 124px;
+				overflow: scroll;
+				margin-right: -13px;
+				padding-right: 16px;
+				
+				$logo-distance: 12px;
+				$image-width: 24px;
+				.logo {
+					margin-top: 10px;
+
+					img {
+						height: $image-width;
+						border: $image-border-width solid;
+						border-radius: 5px;
+					}
+				}
+
+				.logo-ios {
+					img {
+						padding: 6px 7px;
+		  			}
+				}
+
+				.logo-android {
+					img {
+						padding: 5.5px 6px;
+					}
+				}
+
+				.version-number {
+					margin-top: 11px;
+				}
+
+				.left-half {
+					padding-right: calc(#{$logo-distance} / 2);
+
+					.version-number {
+						float: left;
+					}
+
+					img {
+						float: right;
+					}
+				}
+
+				.right-half {
+					padding-left: calc(#{$logo-distance} / 2);
+
+					.version-number {
+						float: right;	
+					}
+
+					img {
+						float: left;
+					}
+				}
+
+				.full-cell {
+					text-align: center;
+
+					.version-number {
+						float: left;
+					}
+
+					img {
+						margin-left: calc((-#{$image-width} - #{$container-padding}) / 2 - 2 * #{$image-border-width});
+					}
+				}
+			}
 		}
 	}
 }

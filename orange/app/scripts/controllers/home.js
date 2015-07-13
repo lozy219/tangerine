@@ -23,6 +23,18 @@ angular.module('orangeApp')
 						{
 							id: 2,
 							version: '1.8.5'
+						},
+						{
+							id: 3,
+							version: '1.8.6'
+						},
+						{
+							id: 4,
+							version: '1.8.7'
+						},
+						{
+							id: 5,
+							version: '1.9.0'
 						}
 					],
 					android: [

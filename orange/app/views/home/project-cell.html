@@ -40,15 +40,31 @@
 		</div>
 		<div class="releases" ng-show="showReleases">
 			<div class="row">
-				<div class="col-xs-6 ios-list">
+				<div class="col-xs-6 ios-list left-half">
 					<div class="row">
 						<div ng-repeat="release in project.release.ios" class="col-xs-12">
-							{{release.version}}
+							<div class="version-number">
+								{{release.version}}
+							</div>
+							<div class="logo logo-ios">
+								<img src="images/upload/ios.png">
+							</div>
 						</div>
+						
 					</div>
 				</div>
 
-				<div class="col-xs-6 android-list">
+				<div class="col-xs-6 android-list right-half">
+					<div class="row">
+						<div ng-repeat="release in project.release.android" class="col-xs-12">
+							<div class="version-number">
+								{{release.version}}
+							</div>
+							<div class="logo logo-android">
+								<img src="images/upload/android.png">
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>

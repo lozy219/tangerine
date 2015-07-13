@@ -18,7 +18,8 @@ angular
 		'ngRoute',
 		'ngSanitize',
 		'ngTouch',
-		'ui.sortable'
+		'ui.sortable',
+		'perfect_scrollbar'
 	])
 	.config(function ($routeProvider) {
 		$routeProvider

@@ -120,17 +120,24 @@
 				}
 			}
 
-
+			.scroller {
+				.ps-scrollbar-x-rail {
+					display: none;
+				}
+			}
 
 
 
 
 			.releases {
 				height: 124px;
-				overflow: scroll;
 				margin-right: -13px;
 				padding-right: 16px;
-				
+				margin-left: -13px;
+				padding-left: 13px;
+				margin-top: 13px;
+				background-color: #494949;
+
 				$logo-distance: 12px;
 				$image-width: 24px;
 				.logo {

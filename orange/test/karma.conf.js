@@ -46,6 +46,8 @@ module.exports = function(config) {
       'bower_components/outlayer/item.js',
       'bower_components/outlayer/outlayer.js',
       'bower_components/jquery.masonry/masonry.js',
+      'bower_components/perfect-scrollbar/src/perfect-scrollbar.js',
+      'bower_components/angular-perfect-scrollbar/src/angular-perfect-scrollbar.js',
       'bower_components/angular-mocks/angular-mocks.js',
       // endbower
       "app/scripts/**/*.js",

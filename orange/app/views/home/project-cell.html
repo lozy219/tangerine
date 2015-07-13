@@ -5,7 +5,7 @@
 	<div class="row-title">
 		{{ project.title | uppercase }}
 
-		<span class="cell-arrow" ng-click="toggleExpansion();" ng-class="{true: 'dropup-arrow', false: 'dropdown-arrow'}[isExpanded]">
+		<span class="cell-arrow" ng-click="toggleExpansion();" ng-class="{true: 'dropup-arrow', false: 'dropdown-arrow'}[projectId == expandedProject.id]">
 		</span>
 	</div>
 	<div class="row-platform">

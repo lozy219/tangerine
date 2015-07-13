@@ -1,4 +1,4 @@
-<div class="section-home">
+<div class="section-home" ng-controller="HomeCtrl">
 	<div class="subsection-upload">
 		
 	</div>
@@ -9,7 +9,7 @@
 		</div>
 
 		<ul masonry="true">
-			<li class="animate-cell" ng-repeat="project in projects | filter : {title : titleFilter}" ng-controller="ProjectCellCtrl" ng-init="isExpanded = false">
+			<li class="animate-cell" ng-repeat="project in projects | filter : {title : titleFilter}" ng-controller="ProjectCellCtrl" ng-init="projectId = project.id">
 				<div ng-include="'views/home/project-cell.html'">
 				</div>
 			</li>

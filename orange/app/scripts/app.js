@@ -25,7 +25,6 @@ angular
 		$routeProvider
 			.when('/', {
 				templateUrl: 'views/home/home.html',
-				controller: 'HomeCtrl',
 				css: 'styles/home/home.css'
 			})
 			// .when('/upload', {

@@ -8,7 +8,11 @@
  * Controller of the orangeApp
  */
 angular.module('orangeApp')
-	.controller('HomeCtrl', function ($scope, $timeout) {
+	.controller('HomeCtrl', function ($scope) {
+		$scope.expandedProject = {
+			id: -1
+		};
+
 		$scope.projects = [
 			{
 				id: 1,
@@ -136,9 +140,16 @@ angular.module('orangeApp')
 
 		setTimeout(function() {
 			$('.cell-arrow').on('click', function () {
-				$(this).closest('.animate-cell').toggleClass('expanded-cell');
+				var target = $(this).closest('.animate-cell');
+				if (target.hasClass('expanded-cell')) {
+					$('.expanded-cell').removeClass('expanded-cell');
+				} else {
+					$('.expanded-cell').removeClass('expanded-cell');
+					target.addClass('expanded-cell');
+				}
+				
 				if ($scope.isExpanded) {
-					setTimeout(function() {$('.masonry').masonry('layout');}, 5)	
+					setTimeout(function() {$('.masonry').masonry('layout');}, 5);
 				} else {
 					setTimeout(function() {$('.masonry').masonry('layout');}, 200);
 				}

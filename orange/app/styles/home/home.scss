@@ -22,13 +22,17 @@
 }
 
 .expanded-cell {
-	height: 230px !important;
+	height: 258px !important;
+
+	.project-cell {
+		min-height: 258px;
+	}
 }
 
 .animate-cell {
-	-webkit-transition: height 1s; 
-	-moz-transition: height 1s; 
-	-ms-transition: height 1s; 
-	-o-transition: height 1s; 
-	transition: height 1s;  
+	-webkit-transition: height 0.15s; 
+	-moz-transition: height 0.15s; 
+	-ms-transition: height 0.15s; 
+	-o-transition: height 0.15s; 
+	transition: height 0.15s;  
 }

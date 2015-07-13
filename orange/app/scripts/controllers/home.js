@@ -8,7 +8,7 @@
  * Controller of the orangeApp
  */
 angular.module('orangeApp')
-	.controller('HomeCtrl', function ($scope) {
+	.controller('HomeCtrl', function ($scope, $timeout) {
 		$scope.projects = [
 			{
 				id: 1,
@@ -121,4 +121,15 @@ angular.module('orangeApp')
 
 			return undefined;
 		};
+
+		setTimeout(function() {
+			$('.cell-arrow').on('click', function () {
+				$(this).closest('.animate-cell').toggleClass('expanded-cell');
+				if ($scope.isExpanded) {
+					setTimeout(function() {$('.masonry').masonry('layout');}, 5)	
+				} else {
+					setTimeout(function() {$('.masonry').masonry('layout');}, 200);
+				}
+			});
+		}, 100);
 	});

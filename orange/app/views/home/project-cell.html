@@ -5,7 +5,7 @@
 	<div class="row-title">
 		{{ project.title | uppercase }}
 
-		<span class="cell-arrow" ng-click="isExpanded = !isExpanded" ng-class="{true: 'dropup-arrow', false: 'dropdown-arrow'}[isExpanded]">
+		<span class="cell-arrow" ng-click="toggleExpansion();" ng-class="{true: 'dropup-arrow', false: 'dropdown-arrow'}[isExpanded]">
 		</span>
 	</div>
 	<div class="row-platform">
@@ -38,7 +38,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="releases" ng-if="isExpanded">
+		<div class="releases" ng-show="showReleases">
 			<div class="row">
 				<div class="col-xs-6 ios-list">
 					<div class="row">

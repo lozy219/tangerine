@@ -101,11 +101,6 @@ angular
 					setTimeout(function () {
 						element.masonry(options);
 
-						angular.element(element[0].children).on('click', function () {
-							angular.element(this).toggleClass('expanded-cell');
-							setTimeout(function() {element.masonry('layout');}, 200);
-						});
-
 						element.on('$destroy', function () {
 							element.masonry('destroy');
 						});

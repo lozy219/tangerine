@@ -10,17 +10,18 @@
 	.project-cell {
 		$image-width: 46px;
 		$image-border-width: 1px;
-		-webkit-transition: height 1s; 
-		-moz-transition: height 1s; 
-		-ms-transition: height 1s; 
-		-o-transition: height 1s; 
-		transition: height 1s;  
+		-webkit-transition: min-height 0.15s; 
+		-moz-transition: min-height 0.15s; 
+		-ms-transition: min-height 0.15s; 
+		-o-transition: min-height 0.15s; 
+		transition: min-height 0.15s;  
 
 		background-color: $project-cell-color;
 		margin-bottom: 25px;
 		padding: 13px;
 		color: white;
 		line-height: 155%;
+		min-height: 124px;
 
 		.cell-arrow {
 			width: 0; 

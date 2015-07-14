@@ -129,4 +129,9 @@ angular
 		$rootScope.Utils = {
 			keys: Object.keys
 		};
+
+		$rootScope.Constants = {
+			// to be configured
+			apiBaseUrl : 'http://j.z/api/'
+		};
 	});

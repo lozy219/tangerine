@@ -24,8 +24,7 @@ angular
 	.config(function ($routeProvider) {
 		$routeProvider
 			.when('/', {
-				templateUrl: 'views/home/home.html',
-				css: 'styles/home/home.css'
+				templateUrl: 'views/home/home.html'
 			})
 			// .when('/upload', {
 			// 	templateUrl: 'views/upload.html',

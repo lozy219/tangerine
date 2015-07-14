@@ -48,13 +48,17 @@ class ProjectController extends Controller {
 		return response()->json($project);
 	}
 
-	public function getProjectWithReleases() {
+	public function getFullProject() {
 		$release_controller = new ReleaseController;
+		$client_controller = new ClientController;
 		$projects = Project::all();
 
 		foreach ($projects as $project) {
-			$releases = $release_controller->getReleases($project['id']);
+			$releases = $release_controller->getReleasesByProjectId($project['id']);
 			$project['release'] = $releases;
+
+			$client = $client_controller->getClientById($project['client_id']);
+			$project['client'] = $client['name'];
 		}
 
 		return response()->json($projects);

@@ -9,7 +9,7 @@
  */
 angular.module('orangeApp')
 	.controller('HomeCtrl', function ($scope, $http) {
-		$http.get($scope.Constants.apiBaseUrl + 'project_with_release')
+		$http.get($scope.Constants.apiBaseUrl + 'full_project')
 			.success(function (data, status, headers, config) {
 				$scope.projects = data;
 			})

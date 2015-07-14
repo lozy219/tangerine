@@ -31,13 +31,15 @@ class ClientController extends Controller {
 	}
 
 	public function deleteClient($id) {
-		$client = Book::find($id);
+		
+		$client = Client::find($id);
 		$client->delete();
  
 		return response()->json('deleted');
 	}
 
 	public function updateClient(Request $request, $id) {
+		
 		$client= Client::find($id);
 		$client->name = $request->input('name');
 
@@ -47,6 +49,7 @@ class ClientController extends Controller {
 	}
 
 	public function updateClientPassword(Request $request, $id) {
+		
 		$client= Client::find($id);
 		// hash needed
 		$client->password = $request->input('password');
@@ -54,5 +57,11 @@ class ClientController extends Controller {
 		$client->save();
 		
 		return response()->json($client);
+	}
+
+	public function getClientById($id) {
+		$client = Client::find($id);
+
+		return $client;
 	}
 }

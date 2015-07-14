@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 
 class ProjectController extends Controller {
 
-	public function index(){
+	public function index() {
 
 		$projects = Project::all();
 
@@ -46,5 +46,17 @@ class ProjectController extends Controller {
 		$project->save();
 
 		return response()->json($project);
+	}
+
+	public function getProjectWithReleases() {
+		$release_controller = new ReleaseController;
+		$projects = Project::all();
+
+		foreach ($projects as $project) {
+			$releases = $release_controller->getReleases($project['id']);
+			$project['release'] = $releases;
+		}
+
+		return response()->json($projects);
 	}
 }

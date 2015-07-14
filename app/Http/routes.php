@@ -33,10 +33,11 @@ $app->group(['prefix' => 'api', 'namespace' => 'App\Http\Controllers'], function
 	$app->post('project', 'ProjectController@createProject');
 	$app->put('project/{id}', 'ProjectController@updateProject');
 	$app->delete('project/{id}', 'ProjectController@deleteProject');
+	$app->get('project_with_release', 'ProjectController@getProjectWithReleases');
 
 	$app->get('release', 'ReleaseController@index');
 	$app->get('release/{id}', 'ReleaseController@getRelease');
 	$app->post('release', 'ReleaseController@createRelease');
 	$app->put('release/{id}', 'ReleaseController@updateRelease');
-	$app->delete('release/{id}', 'ReleaseController@deleteRelease');	
+	$app->delete('release/{id}', 'ReleaseController@deleteRelease');
 });

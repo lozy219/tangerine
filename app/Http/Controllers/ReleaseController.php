@@ -52,4 +52,31 @@ class ReleaseController extends Controller {
 
 		return response()->json($release);
 	}
+
+	public function getiOSReleases($project_id) {
+		$releases = Release::where('project_id', $project_id)
+			->where('platform', 'iOS')
+			->orderBy('version', 'desc')
+			->get();
+
+		return $releases;
+	}
+
+	public function getAndroidReleases($project_id) {
+		$releases = Release::where('project_id', $project_id)
+			->where('platform', 'Android')
+			->orderBy('version', 'desc')
+			->get();
+
+		return $releases;
+	}
+
+	public function getReleases($project_id) {
+		$releases = array(
+			'ios' => $this->getiOSReleases($project_id),
+			'android' => $this->getAndroidReleases($project_id)
+		);
+
+		return $releases;
+	}
 }

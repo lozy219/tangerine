@@ -18,6 +18,8 @@ angular.module('orangeApp')
 		// 	});
 
 		$scope.$watch('uploadedFiles', function () {
+			console.log($scope.uploadedFiles);
+			console.log($scope.rejectedFiles);
 			$scope.upload($scope.uploadedFiles);
 		});
 
@@ -36,7 +38,7 @@ angular.module('orangeApp')
 						console.log('file ' + config.file.name + 'uploaded. Response: ' + data);
 					}).error(function (data, status, headers, config) {
 						console.log('error status: ' + status);
-					})
+					});
 				}
 			}
 		};

@@ -2,23 +2,51 @@
 	<div class="subsection-upload">
 		<div class="upload-dropbox"
 			ngf-drop
-			ngf-drag-over-class="dragover"
 			ng-model="uploadedFiles"
+			ng-init="uploadedFiles = []; rejectedFiles = []"
 			ng-model-rejected="rejectedFiles"
 			ngf-change="fileDropped($files, $event, $rejectedFiles)"
 			ngf-multiple="false"
 			ngf-accept="'.apk,.ipa'"
 			ngf-allow-dir="true"
-			ngf-drag-over-class="{accept:'upload-accepted', reject:'upload-rejected', delay:100}"
+			ngf-drag-over-class="'dragover'"
 			ngf-drop-available="dropSupported"
 			ngf-stop-propagation="true"
 			ngf-hide-on-drop-not-available="false"
 		>
-			<div class="logo logo-ios">
-				<img src="images/upload/ios-grey.png">
+			<div class="col-logos">
+				<div class="logo logo-ios">
+					<img src="images/upload/ios-grey.png">
+				</div>
+				<div class="logo logo-android">
+					<img src="images/upload/android-grey.png">
+				</div>
 			</div>
-			<div class="logo logo-android">
-				<img src="images/upload/android-grey.png">
+
+			<div class="col-text">
+				<span ng-if="uploadedFiles.length == 0 || rejectedFiles.length !== 0">
+					DROP FILES TO UPLOAD
+				</span>
+				<span ng-if="uploadedFiles.length !== 0 && rejectedFiles.length == 0">
+					{{ uploadedFiles[0].name }}
+				</span>
+			</div>
+
+			<div class="col-field">
+			</div>
+
+			<div class="col-button" 
+				ngf-select 
+				ngf-change="upload($files)" 
+				ngf-multiple="false" 
+				ngf-accept="'.apk,.ipa'"
+			>
+				<span ng-if="uploadedFiles.length == 0 || rejectedFiles.length !== 0">
+					BROWSE FOR FILES
+				</span>
+				<span ng-if="uploadedFiles.length !== 0 && rejectedFiles.length == 0">
+					UPLOAD
+				</span>
 			</div>
 		</div>
 	</div>

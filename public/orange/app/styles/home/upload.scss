@@ -20,13 +20,21 @@
 		&:focus {
 			outline: none;
 		}
+
+		div {
+			display: inline;
+		}
+
+		&>div {
+			display: inline-block;
+		}
 	}
 	.dragover {
 		border: 2px dashed #515151;
 	}
 
 	.logo {
-		display: inline;
+		margin-left: 5px;
 
 		img {
 			height: 67px;
@@ -44,6 +52,38 @@
 	.logo-android {
 		img {
 			padding: 13px 14.5px;
+		}
+	}
+
+	.col-logos {
+		width: 19%;
+	}
+
+	.col-text {
+		width: 19%;
+		font-weight: 300;
+		font-size: 14px;
+		color: rgb(144, 144, 144);
+	}
+
+	.col-field {
+		width: 29%;
+	}
+
+	.col-button {
+		width: 29%;
+		text-align: center;
+		background-color: #333333;
+		color: white;
+		padding: 15px 36px;
+		border-radius: 10px;
+		font-weight: 100;
+		font-size: 18px;
+		vertical-align: middle;
+		cursor: pointer;
+
+		&:hover {
+			background-color: #515151;
 		}
 	}
 }

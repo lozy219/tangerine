@@ -2,8 +2,8 @@
 	<div class="subsection-upload">
 		<div class="upload-dropbox"
 			ngf-drop
-			ng-model="uploadedFiles"
 			ng-init="uploadedFiles = []; rejectedFiles = []"
+			ng-model="uploadedFiles"
 			ng-model-rejected="rejectedFiles"
 			ngf-change="fileDropped($files, $event, $rejectedFiles)"
 			ngf-multiple="false"
@@ -28,18 +28,23 @@
 					DROP FILES TO UPLOAD
 				</span>
 				<span ng-if="uploadedFiles.length !== 0 && rejectedFiles.length == 0">
-					{{ uploadedFiles[0].name }}
+					{{ uploadedFiles[0].name | uppercase }}
 				</span>
 			</div>
 
 			<div class="col-field">
+				<span ng-if="uploadedFiles.length !== 0 && rejectedFiles.length == 0">
+					<input class="version-number-field"type="text" placeholder="version number">
+				</span>
 			</div>
 
 			<div class="col-button" 
-				ngf-select 
-				ngf-change="upload($files)" 
+				ngf-select
 				ngf-multiple="false" 
 				ngf-accept="'.apk,.ipa'"
+				accept=".apk,.ipa"
+				ng-model="uploadedFiles"
+				ng-model-rejected="rejectedFiles"
 			>
 				<span ng-if="uploadedFiles.length == 0 || rejectedFiles.length !== 0">
 					BROWSE FOR FILES

@@ -68,6 +68,19 @@
 
 	.col-field {
 		width: 29%;
+
+		.version-number-field {
+			border: 1px solid #BEBEBE;
+			border-radius: 5px;
+			padding: 10px;
+			font-weight: 200;
+			width: 80%;
+			background-color: transparent;
+
+			&:focus {
+				outline: none;
+			}
+		}
 	}
 
 	.col-button {
@@ -84,6 +97,10 @@
 
 		&:hover {
 			background-color: #515151;
+		}
+
+		&:focus {
+			outline: none;
 		}
 	}
 }

@@ -20,7 +20,6 @@ angular.module('orangeApp')
 		$scope.$watch('uploadedFiles', function () {
 			console.log($scope.uploadedFiles);
 			console.log($scope.rejectedFiles);
-			$scope.upload($scope.uploadedFiles);
 		});
 
 		$scope.upload = function (files) {

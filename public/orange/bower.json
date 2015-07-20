@@ -16,7 +16,8 @@
     "jquery-ui": "~1.11.4",
     "jquery-bridget": "~1.1.0",
     "jquery.masonry": "*",
-    "angular-perfect-scrollbar": "~0.0.4"
+    "angular-perfect-scrollbar": "~0.0.4",
+    "ng-file-upload": "~5.0.9"
   },
   "overrides": {
     "outlayer": {

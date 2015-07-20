@@ -19,7 +19,8 @@ angular
 		'ngSanitize',
 		'ngTouch',
 		'ui.sortable',
-		'perfect_scrollbar'
+		'perfect_scrollbar',
+		'ngFileUpload'
 	])
 	.config(function ($routeProvider) {
 		$routeProvider

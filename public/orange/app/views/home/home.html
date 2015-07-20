@@ -1,8 +1,23 @@
 <div class="section-home" ng-controller="HomeCtrl">
 	<div class="subsection-upload">
-		
+		<div class="upload-dropbox"
+			ngf-drop
+			ngf-drag-over-class="dragover"
+			ng-model="uploadedFiles"
+			ng-model-rejected="rejectedFiles"
+			ngf-change="fileDropped($files, $event, $rejectedFiles)"
+			ngf-multiple="false"
+			ngf-accept="'.apk,.ipa'"
+			ngf-allow-dir="true"
+			ngf-drag-over-class="{accept:'upload-accepted', reject:'upload-rejected', delay:100}"
+			ngf-drop-available="dropSupported"
+			ngf-stop-propagation="true"
+			ngf-hide-on-drop-not-available="false"
+		>
+		Drop files here
+		</div>
 	</div>
-
+	
 	<div class="subsection-list">
 		<div class="title-subsection">
 			LATEST PROJECT

@@ -72,10 +72,17 @@ class ReleaseController extends Controller {
 	}
 
 	public function getReleasesByProjectId($project_id) {
-		$releases = array(
-			'ios' => $this->getiOSReleasesByProjectId($project_id),
-			'android' => $this->getAndroidReleasesByProjectId($project_id)
-		);
+		$ios = $this->getiOSReleasesByProjectId($project_id);
+		$android = $this->getAndroidReleasesByProjectId($project_id);
+		$releases = array();
+
+		if (count($ios) > 0) {
+			$releases['ios'] = $ios;
+		}
+
+		if (count($android) > 0) {
+			$releases['android'] = $android;
+		}
 
 		return $releases;
 	}

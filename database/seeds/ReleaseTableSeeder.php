@@ -20,6 +20,39 @@ class ReleaseTableSeeder extends Seeder {
 			'platform' => 'iOS',
 			'uploader_id' => '2',
 			'project_id' => '1'
-		 ]);	
+		 ]);
+
+		Release::create([
+			'link' => 'http://www.google.sg',
+			'version' => '3.8',
+			'release_note' => 'Nothing here',
+			'image_links' => '["https://www.samplestore.com/skin/frontend/default/samplestore/images/logo.png"]',
+			'phase' => 'UAT',
+			'platform' => 'iOS',
+			'uploader_id' => '2',
+			'project_id' => '1'
+		 ]);
+
+		Release::create([
+			'link' => 'http://www.google.sg',
+			'version' => '2.5',
+			'release_note' => 'Nothing here',
+			'image_links' => '["https://www.samplestore.com/skin/frontend/default/samplestore/images/logo.png"]',
+			'phase' => 'UAT',
+			'platform' => 'iOS',
+			'uploader_id' => '2',
+			'project_id' => '1'
+		 ]);
+
+		Release::create([
+			'link' => 'http://www.google.sg',
+			'version' => '4.5',
+			'release_note' => 'Nothing here',
+			'image_links' => '["https://www.samplestore.com/skin/frontend/default/samplestore/images/logo.png"]',
+			'phase' => 'UAT',
+			'platform' => 'Android',
+			'uploader_id' => '2',
+			'project_id' => '1'
+		 ]);
 	}
 }

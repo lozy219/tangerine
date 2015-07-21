@@ -272,9 +272,50 @@ module.exports = function (grunt) {
 					'<%= yeoman.dist %>',
 					'<%= yeoman.dist %>/images',
 					'<%= yeoman.dist %>/styles'
-				]
+				],
+
+				patterns: {
+					html: [
+					[/(images\/.*?\.(?:gif|jpeg|jpg|png|webp|svg))/gm,
+					'Update the angular directives that ref revved images'],
+
+					//defaults from node module
+					[ /<script.+src=['"]([^"']+)["']/gm,
+					'Update the HTML to reference our concat/min/revved script files'
+					],
+					[ /<link[^\>]+href=['"]([^"']+)["']/gm,
+					'Update the HTML with the new css filenames'
+					],
+					[ /<img[^\>]+src=['"]([^"']+)["']/gm,
+					'Update the HTML with the new img filenames'
+					],
+					[ /data-main\s*=['"]([^"']+)['"]/gm,
+					'Update the HTML with data-main tags',
+					function (m) { return m.match(/\.js$/) ? m : m + '.js'; },
+					function (m) { return m.replace('.js', ''); }
+					],
+					[ /data-(?!main).[^=]+=['"]([^'"]+)['"]/gm,
+					'Update the HTML with data-* tags'
+					],
+					[ /url\(\s*['"]([^"']+)["']\s*\)/gm,
+					'Update the HTML with background imgs, case there is some inline style'
+					],
+					[ /<a[^\>]+href=['"]([^"']+)["']/gm,
+					'Update the HTML with anchors images'
+					],
+					[/<input[^\>]+src=['"]([^"']+)["']/gm,
+					'Update the HTML with reference in input'
+					]
+					],
+					js: [
+					[/(images\/.*?\.(?:gif|jpeg|jpg|png|webp|svg))/gm, 
+					'Update the JS to reference our revved images']
+					]
+				}
 			}
 		},
+
+		// this line in added for syntax highlight'
 
 		// The following *-min tasks will produce minified files in the dist folder
 		// By default, your `index.html`'s <!-- Usemin block --> will take care of

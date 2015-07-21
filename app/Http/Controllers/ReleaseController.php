@@ -29,7 +29,12 @@ class ReleaseController extends Controller {
 
 		// return response()->json($release);
 
-		return "{ok}";
+		$file = $request->file('file');
+		$file->move('download/' , $file->getClientOriginalName());
+		// todo: parse ipa
+		$version = $request->input('version');
+
+		return json_encode('ok');
 	}
 
 	public function deleteRelease($id) {

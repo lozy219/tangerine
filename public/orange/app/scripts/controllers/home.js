@@ -8,7 +8,7 @@
  * Controller of the orangeApp
  */
 angular.module('orangeApp')
-	.controller('HomeCtrl', ['$scope', 'Upload', '$http', function ($scope, Upload, $http) {
+	.controller('HomeCtrl', ['$scope', 'Upload', '$http', '$location', '$window', function ($scope, Upload, $http, $location, $window) {
 		// $http.get($scope.Constants.apiBaseUrl + 'full_project')
 		// 	.success(function (data) {
 		// 		$scope.projects = data;
@@ -41,6 +41,12 @@ angular.module('orangeApp')
 		// 		}
 		// 	}
 		// };
+
+		$scope.downloadRedirect = function(link) {
+			console.log(link);
+			$window.location.href = link;
+			// $location.url(link);
+		};
 
 		$scope.projects = [
 			{

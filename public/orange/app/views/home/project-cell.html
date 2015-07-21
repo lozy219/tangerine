@@ -10,18 +10,24 @@
 	</div>
 	<div class="row-platform">
 		<div class="row" ng-if="Utils.keys(project.release).length == 2">
-			<div class="col-xs-6 ios-half left-half">
+			<div class="col-xs-6 ios-half left-half" 
+				ng-really-click="downloadRedirect(project.release.ios[0].link)" 
+				ng-really-message="You are trying to download {{ project.title }} v{{ project.release.ios[0].version }} for iOS."
+			>
 				<div class="version-number">
-					v1.23
+					v{{ project.release.ios[0].version }}
 				</div>
 				<div class="logo logo-ios">
 					<img src="images/upload/ios.png">
 				</div>
 			</div>
 
-			<div class="col-xs-6 android-half right-half">
+			<div class="col-xs-6 android-half right-half"
+				ng-really-click="downloadRedirect(project.release.android[0].link)" 
+				ng-really-message="You are trying to download {{ project.title }} v{{ project.release.android[0].version }} for Android."
+			>
 				<div class="version-number">
-					v3.21
+					v{{ project.release.android[0].version }}
 				</div>
 				<div class="logo logo-android">
 					<img src="images/upload/android.png">
@@ -29,12 +35,29 @@
 			</div>
 		</div>
 		<div class="row" ng-if="Utils.keys(project.release).length == 1">
-			<div class="col-xs-12 full-cell">
+			<div class="col-xs-12 full-cell"
+				ng-if="getPlatform(project) == 'ios'"
+				ng-really-click="downloadRedirect(project.release.ios[0].link)" 
+				ng-really-message="You are trying to download {{ project.title }} v{{ project.release.ios[0].version }} for iOS."
+			>
 				<div class="version-number">
-					v3.21
+					v{{ project.release.ios[0].version }}
 				</div>
-				<div class="logo" ng-class="{ios: 'logo-ios', android: 'logo-android'}[getPlatform(project)]">
-					<img ng-src="images/upload/{{getPlatform(project)}}.png">
+				<div class="logo logo-ios">
+					<img ng-src="images/upload/ios.png">
+				</div>
+			</div>
+
+			<div class="col-xs-12 full-cell"
+				ng-if="getPlatform(project) == 'android'"
+				ng-really-click="downloadRedirect(project.release.android[0].link)" 
+				ng-really-message="You are trying to download {{ project.title }} v{{ project.release.android[0].version }} for Android."
+			>
+				<div class="version-number">
+					v{{ project.release.android[0].version }}
+				</div>
+				<div class="logo logo-ios">
+					<img ng-src="images/upload/ios.png">
 				</div>
 			</div>
 		</div>
@@ -42,9 +65,9 @@
 			<div class="row">
 				<div class="col-xs-6 ios-list left-half">
 					<div class="row">
-						<div ng-repeat="release in project.release.ios" class="col-xs-12">
+						<div ng-repeat="release in project.release.ios" class="col-xs-12 ios-half">
 							<div class="version-number">
-								{{release.version}}
+								v{{release.version}}
 							</div>
 							<div class="logo logo-ios">
 								<img src="images/upload/ios.png">
@@ -56,9 +79,9 @@
 
 				<div class="col-xs-6 android-list right-half">
 					<div class="row">
-						<div ng-repeat="release in project.release.android" class="col-xs-12">
+						<div ng-repeat="release in project.release.android" class="col-xs-12 android-half">
 							<div class="version-number">
-								{{release.version}}
+								v{{release.version}}
 							</div>
 							<div class="logo logo-android">
 								<img src="images/upload/android.png">

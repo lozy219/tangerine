@@ -126,9 +126,6 @@
 				}
 			}
 
-
-
-
 			.releases {
 				height: 131px;
 				margin-right: -13px;
@@ -199,6 +196,24 @@
 
 					img {
 						margin-left: calc((-#{$image-width} - #{$container-padding}) / 2 - 2 * #{$image-border-width});
+					}
+				}
+			}
+
+			.ios-half, .android-half, .full-cell {
+				cursor: pointer;
+
+				img {
+					-webkit-filter: brightness(100%);
+				}
+
+				&:hover {
+					.version-number {
+						color: #909090;
+					}
+
+					img {
+						-webkit-filter: brightness(60%);
 					}
 				}
 			}

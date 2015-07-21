@@ -96,4 +96,10 @@ $app->group(['namespace' => 'App\Http\Controllers'], function ($app) {
 	require __DIR__.'/../app/Http/routes.php';
 });
 
+$app->configure('cors');
+$app->register('Nord\Lumen\Cors\CorsServiceProvider');
+$app->middleware([
+    'Nord\Lumen\Cors\Middleware\CorsMiddleware',
+]);
+
 return $app;

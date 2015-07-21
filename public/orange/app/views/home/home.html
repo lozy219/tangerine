@@ -2,7 +2,7 @@
 	<div class="subsection-upload">
 		<div class="upload-dropbox"
 			ngf-drop
-			ng-init="uploadedFiles = []; rejectedFiles = []"
+			ng-init="uploadedFiles = []; rejectedFiles = [];"
 			ng-model="uploadedFiles"
 			ng-model-rejected="rejectedFiles"
 			ngf-change="fileDropped($files, $event, $rejectedFiles)"
@@ -28,13 +28,25 @@
 					DROP FILES TO UPLOAD
 				</span>
 				<span ng-if="uploadedFiles.length !== 0 && rejectedFiles.length == 0">
-					{{ uploadedFiles[0].name | uppercase }}
+					<span ng-if="uploadedFiles[0].name.length <= 13">
+						{{ uploadedFiles[0].name | uppercase }}
+					</span>
+					<span ng-if="uploadedFiles[0].name.length > 13">
+						{{ uploadedFiles[0].name | uppercase | limitTo : 13 }}...
+					</span>
+					<span class="upload-cross" ng-click="$parent.uploadedFiles = []; $parent.rejectedFiles = [];">
+					</span>
 				</span>
 			</div>
 
 			<div class="col-field">
 				<span ng-if="uploadedFiles.length !== 0 && rejectedFiles.length == 0">
-					<input class="version-number-field"type="text" placeholder="version number">
+					<input class="version-number-field" 
+						type="text" 
+						placeholder="version number" 
+						ng-model="fileVersion" 
+						ngRequired="true"
+					>
 				</span>
 			</div>
 
@@ -45,13 +57,16 @@
 				accept=".apk,.ipa"
 				ng-model="uploadedFiles"
 				ng-model-rejected="rejectedFiles"
+				ng-if="uploadedFiles.length === 0 || rejectedFiles.length !== 0"
 			>
-				<span ng-if="uploadedFiles.length == 0 || rejectedFiles.length !== 0">
-					BROWSE FOR FILES
-				</span>
-				<span ng-if="uploadedFiles.length !== 0 && rejectedFiles.length == 0">
-					UPLOAD
-				</span>
+				BROWSE FOR FILES
+			</div>
+
+			<div class="col-button" 
+				ng-if="uploadedFiles.length !== 0 && rejectedFiles.length === 0"
+				ng-click="upload(uploadedFiles[0], fileVersion)"
+			>
+				UPLOAD
 			</div>
 		</div>
 	</div>

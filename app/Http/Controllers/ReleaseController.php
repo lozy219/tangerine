@@ -25,9 +25,11 @@ class ReleaseController extends Controller {
 
 	public function createRelease(Request $request) {
 
-		$release = Release::create($request->all());
+		// $release = Release::create($request->all());
 
-		return response()->json($release);
+		// return response()->json($release);
+
+		return "{ok}";
 	}
 
 	public function deleteRelease($id) {

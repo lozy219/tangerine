@@ -64,6 +64,23 @@
 		font-weight: 300;
 		font-size: 14px;
 		color: rgb(144, 144, 144);
+
+		.upload-cross {
+			background-color: #909090;
+			border-radius: 5px;
+			position: relative;
+			padding: 7px 8px;
+			padding-top: 6px;
+			cursor: pointer;
+
+			&:after {
+				content: "\d7";
+				font-size: 25px;
+				color: #FFF;
+				text-align: center;
+				vertical-align: sub;
+			}
+		}
 	}
 
 	.col-field {

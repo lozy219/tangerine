@@ -18,27 +18,23 @@ angular.module('orangeApp')
 			});
 
 		$scope.upload = function (file, version) {
-			file.upload = Upload.http({
-				url: $scope.Constants.apiBaseUrl + 'release',
-				method: 'POST',
-				headers: {
-					'Content-Type': file.type
-				},
-				data: {'file': file, 'version': version}
-			});
+			console.log(file);
+			console.log(version);
 
-			file.upload.then(function (response) {
-				console.log(response);
-				file.result = response.data;
-			}, function (response) {
-				if (response.status > 0) {
-					$scope.errorMsg = response.status + ': ' + response.data;
-				}
-			});
+			var fd = new FormData();
+			fd.append("file", file);
 
-			file.upload.progress(function (evt) {
-				file.progress = Math.min(100, parseInt(100.0 * evt.loaded / evt.total));
-			});
+			$http.post($scope.Constants.apiBaseUrl + 'release', fd, {
+					withCredentials: true,
+					headers: {'Content-Type': undefined},
+					transformRequest: angular.identity
+				})
+				.success(function(data, status, headers, config) {
+					console.log(data);
+				})
+				.error(function(data, status, headers, config) {
+					console.log(data);
+				});
 		};
 
 		$scope.downloadRedirect = function(link) {

@@ -2,7 +2,7 @@
 	<div class="subsection-upload">
 		<div class="upload-dropbox"
 			ngf-drop
-			ng-init="uploadedFiles = []; rejectedFiles = [];"
+			ng-init="uploadedFiles = []; rejectedFiles = []; fileVersion = {};"
 			ng-model="uploadedFiles"
 			ng-model-rejected="rejectedFiles"
 			ngf-change="fileDropped($files, $event, $rejectedFiles)"
@@ -43,8 +43,8 @@
 				<span ng-if="uploadedFiles.length !== 0 && rejectedFiles.length == 0">
 					<input class="version-number-field" 
 						type="text" 
-						placeholder="version number" 
-						ng-model="fileVersion" 
+						placeholder="version number"
+						ng-model="fileVersion.version" 
 						ngRequired="true"
 					>
 				</span>
@@ -64,7 +64,7 @@
 
 			<div class="col-button" 
 				ng-if="uploadedFiles.length !== 0 && rejectedFiles.length === 0"
-				ng-click="upload(uploadedFiles[0], fileVersion)"
+				ng-click="upload(uploadedFiles[0], fileVersion.version)"
 			>
 				UPLOAD
 			</div>

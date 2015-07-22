@@ -30,6 +30,7 @@ class ReleaseController extends Controller {
 		// return response()->json($release);
 
 		$file = $request->file('file');
+
 		$file->move('download/' , $file->getClientOriginalName());
 		// todo: parse ipa
 		$version = $request->input('version');

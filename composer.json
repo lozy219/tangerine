@@ -7,7 +7,8 @@
     "require": {
         "laravel/lumen-framework": "5.1.*",
         "vlucas/phpdotenv": "~1.0",
-        "nordsoftware/lumen-cors": "^1.3"
+        "nordsoftware/lumen-cors": "^1.3",
+        "lozy219/ipa-distribution": "dev-master"
     },
     "require-dev": {
         "phpunit/phpunit": "~4.0",

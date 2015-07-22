@@ -23,6 +23,7 @@ angular.module('orangeApp')
 
 			var fd = new FormData();
 			fd.append("file", file);
+			fd.append("version", version);
 
 			$http.post($scope.Constants.apiBaseUrl + 'release', fd, {
 					withCredentials: true,

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Release;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Distribution\IpaDistribution;
 
 
 class ReleaseController extends Controller {
@@ -29,11 +30,22 @@ class ReleaseController extends Controller {
 
 		// return response()->json($release);
 
-		$file = $request->file('file');
-
-		$file->move('download/' , $file->getClientOriginalName());
-		// todo: parse ipa
 		$version = $request->input('version');
+		$file = $request->file('file');
+		$file_name = $file->getClientOriginalName();
+		$product_name = substr($file_name, 0, strlen($file_name)  - 4);
+		$path = 'download/' . $product_name . '/';
+
+		if (substr($file_name, -3) == "apk") {
+			$path = $path . 'Android' . '/' . $version;
+			$file->move($path, $file_name);
+			$path = $path . '/' . $file_name;
+		} else if (substr($file_name, -3) == "ipa") {
+			$path = $path . 'iOS' . '/' . $version;
+			$file->move($path, $file_name);
+			$path = $path . '/' . $file_name;
+			$ipa = new IpaDistribution($path);
+		}
 
 		return json_encode('ok');
 	}

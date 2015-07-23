@@ -31,6 +31,9 @@ angular
 			.when('/dummy', {
 				templateUrl: 'views/home/dummy_product.html'
 			})
+			.when('/login', {
+				templateUrl: 'views/login/login.html'	
+			})
 			.otherwise({
 				redirectTo: '/'
 			});

@@ -1,0 +1,23 @@
+@import "../constant";
+
+.section-login {
+	margin-top: 250px;
+
+	.subsection-login {
+		input {
+			background-color: transparent;
+			border: none;
+			height: inherit;
+			font-weight: 100;
+			padding: 0px 80px;
+			box-shadow: none;
+			font-size: 55px;
+			text-align: center;
+
+			&:hover, &:focus {
+				outline: none;
+				box-shadow: none;
+			}
+		}
+	}
+}

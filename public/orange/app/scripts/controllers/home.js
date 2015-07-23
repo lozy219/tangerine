@@ -9,13 +9,18 @@
  */
 angular.module('orangeApp')
 	.controller('HomeCtrl', ['$scope', 'Upload', '$http', '$location', '$window', function ($scope, Upload, $http, $location, $window) {
-		$http.get($scope.Constants.apiBaseUrl + 'full_project')
-			.success(function (data) {
-				$scope.projects = data;
-			})
-			.error(function (data) {
-				console.log(data);
-			});
+
+		$scope.loadData = function() {
+			$http.get($scope.Constants.apiBaseUrl + 'full_project')
+				.success(function (data) {
+					$scope.projects = data;
+				})
+				.error(function (data) {
+					console.log(data);
+				});
+		};
+
+		$scope.loadData();
 
 		$scope.upload = function (file, version) {
 			console.log(file);
@@ -30,11 +35,15 @@ angular.module('orangeApp')
 					headers: {'Content-Type': undefined},
 					transformRequest: angular.identity
 				})
-				.success(function(data, status, headers, config) {
-					console.log(data);
+				.success(function() {
+					alert('success');
+					$scope.uploadedFiles = [];
+					$scope.rejectedFiles = [];
+					$scope.fileVersion = [];
+					$scope.loadData();
 				})
-				.error(function(data, status, headers, config) {
-					console.log(data);
+				.error(function() {
+					alert('fail');
 				});
 		};
 

@@ -126,6 +126,12 @@
 				}
 			}
 
+			.download-cell {
+				&:focus {
+					outline: none;
+				}
+			}
+
 			.releases {
 				height: 131px;
 				margin-right: -13px;

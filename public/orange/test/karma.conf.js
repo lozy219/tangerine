@@ -49,6 +49,8 @@ module.exports = function(config) {
       'bower_components/perfect-scrollbar/src/perfect-scrollbar.js',
       'bower_components/angular-perfect-scrollbar/src/angular-perfect-scrollbar.js',
       'bower_components/ng-file-upload/ng-file-upload.js',
+      'bower_components/sweetalert/dist/sweetalert.min.js',
+      'bower_components/angular-sweetalert/SweetAlert.js',
       'bower_components/angular-mocks/angular-mocks.js',
       // endbower
       "app/scripts/**/*.js",

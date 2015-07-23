@@ -8,7 +8,7 @@
  * Controller of the orangeApp
  */
 angular.module('orangeApp')
-	.controller('HomeCtrl', ['$scope', 'Upload', '$http', '$location', '$window', function ($scope, Upload, $http, $location, $window) {
+	.controller('HomeCtrl', ['$scope', 'Upload', '$http', '$location', 'SweetAlert', function ($scope, Upload, $http, $location, SweetAlert) {
 
 		$scope.loadData = function() {
 			$http.get($scope.Constants.apiBaseUrl + 'full_project')
@@ -36,20 +36,15 @@ angular.module('orangeApp')
 					transformRequest: angular.identity
 				})
 				.success(function() {
-					alert('success');
+					SweetAlert.swal('upload successfully', '', 'success');
 					$scope.uploadedFiles = [];
 					$scope.rejectedFiles = [];
 					$scope.fileVersion = [];
 					$scope.loadData();
 				})
 				.error(function() {
-					alert('fail');
+					// alert('fail');
 				});
-		};
-
-		$scope.downloadRedirect = function(link) {
-			$window.location.href = link;
-			// $location.url(link);
 		};
 
 		// $scope.projects = [

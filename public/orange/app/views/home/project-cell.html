@@ -10,9 +10,8 @@
 	</div>
 	<div class="row-platform">
 		<div class="row" ng-if="Utils.keys(project.release).length == 2">
-			<div class="col-xs-6 ios-half left-half" 
-				ng-really-click="downloadRedirect(project.release.ios[0].link)" 
-				ng-really-message="You are trying to download {{ project.title }} v{{ project.release.ios[0].version }} for iOS."
+			<div class="col-xs-6 ios-half left-half download-cell" 
+				ng-click="downloadRedirect(project.release.ios[0].link, release.version, 'iOS')"
 			>
 				<div class="version-number">
 					v{{ project.release.ios[0].version }}
@@ -22,9 +21,8 @@
 				</div>
 			</div>
 
-			<div class="col-xs-6 android-half right-half"
-				ng-really-click="downloadRedirect(project.release.android[0].link)" 
-				ng-really-message="You are trying to download {{ project.title }} v{{ project.release.android[0].version }} for Android."
+			<div class="col-xs-6 android-half right-half download-cell"
+				ng-click="downloadRedirect(project.release.android[0].link, release.version, 'Android')"
 			>
 				<div class="version-number">
 					v{{ project.release.android[0].version }}
@@ -35,10 +33,9 @@
 			</div>
 		</div>
 		<div class="row" ng-if="Utils.keys(project.release).length == 1">
-			<div class="col-xs-12 full-cell"
+			<div class="col-xs-12 full-cell download-cell"
 				ng-if="getPlatform(project) == 'ios'"
-				ng-really-click="downloadRedirect(project.release.ios[0].link)" 
-				ng-really-message="You are trying to download {{ project.title }} v{{ project.release.ios[0].version }} for iOS."
+				ng-click="downloadRedirect(project.release.ios[0].link, release.version, 'iOS')"
 			>
 				<div class="version-number">
 					v{{ project.release.ios[0].version }}
@@ -48,10 +45,9 @@
 				</div>
 			</div>
 
-			<div class="col-xs-12 full-cell"
+			<div class="col-xs-12 full-cell download-cell"
 				ng-if="getPlatform(project) == 'android'"
-				ng-really-click="downloadRedirect(project.release.android[0].link)" 
-				ng-really-message="You are trying to download {{ project.title }} v{{ project.release.android[0].version }} for Android."
+				ng-click="downloadRedirect(project.release.android[0].link, release.version, 'Android')"
 			>
 				<div class="version-number">
 					v{{ project.release.android[0].version }}
@@ -63,11 +59,10 @@
 		</div>
 		<perfect-scrollbar class="releases scroller" wheel-propagation="true" wheel-speed="10" min-scrollbar-length="20" ng-show="showReleases">
 			<div class="row">
-				<div class="col-xs-6 ios-list left-half">
+				<div class="col-xs-6 ios-list left-half download-cell">
 					<div class="row">
 						<div ng-repeat="release in project.release.ios" class="col-xs-12 ios-half"
-							ng-really-click="downloadRedirect(release.link)" 
-							ng-really-message="You are trying to download {{ project.title }} v{{ release.version }} for iOS."
+							ng-click="downloadRedirect(release.link, release.version, 'iOS')"
 						>
 							<div class="version-number">
 								v{{release.version}}
@@ -80,11 +75,10 @@
 					</div>
 				</div>
 
-				<div class="col-xs-6 android-list right-half">
+				<div class="col-xs-6 android-list right-half download-cell">
 					<div class="row">
 						<div ng-repeat="release in project.release.android" class="col-xs-12 android-half"
-							ng-really-click="downloadRedirect(release.link)" 
-							ng-really-message="You are trying to download {{ project.title }} v{{ release.version }} for Android."
+							ng-click="downloadRedirect(release.link, release.version, 'Android')"
 						>
 							<div class="version-number">
 								v{{release.version}}

@@ -11,16 +11,17 @@ class ClientTableSeeder extends Seeder {
 	 * @return void
 	 */
 	public function run() {
+		// here is the default client, will use this until we implement the client part
 		Client::create([
-			'name' => 'James Tan',
+			'name' => 'Codigo',
 			'password' => '123456',
 		 ]);
 		Client::create([
-			'name' => 'Eric Si',
+			'name' => 'James Si',
 			'password' => '123456',
-		]);
+		 ]);
 		Client::create([
-			'name' => 'Singpost',
+			'name' => 'Eric Tan',
 			'password' => '123456',
 		]);
 	}

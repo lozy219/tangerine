@@ -33,19 +33,41 @@ class ReleaseController extends Controller {
 		$version = $request->input('version');
 		$file = $request->file('file');
 		$file_name = $file->getClientOriginalName();
-		$product_name = substr($file_name, 0, strlen($file_name)  - 4);
+		$product_name = $this->getFileNameWithoutExtension($file_name);
+		$base_url = 'http' . ((!empty($_SERVER['HTTPS'])) ? 's' : '') . '://' . $_SERVER['SERVER_NAME'];
 		$path = 'download/' . $product_name . '/';
+		$platform = '';
 
-		if (substr($file_name, -3) == "apk") {
-			$path = $path . 'Android' . '/' . $version;
+		if ($this->getFileExtension($file_name) == 'apk') {
+			$platform = 'Android';
+			$path = $path . $platform . '/' . $version;
 			$file->move($path, $file_name);
 			$path = $path . '/' . $file_name;
-		} else if (substr($file_name, -3) == "ipa") {
-			$path = $path . 'iOS' . '/' . $version;
+			$path = $base_url . '/' . $path;
+		} else if ($this->getFileExtension($file_name) == 'ipa') {
+			$platform = 'iOS';
+			$path = $path . $platform . '/' . $version;
 			$file->move($path, $file_name);
 			$path = $path . '/' . $file_name;
 			$ipa = new IpaDistribution($path);
+			$path = $base_url . '/' . $this->getFileNameWithoutExtension($path) . '/' . $this->getFileNameWithoutExtension($file_name) . '.plist';
 		}
+
+		$project_controller = new ProjectController;
+		$project = $project_controller->findOrCreateProjectName($product_name);
+		$project_id = $project->id;
+		echo $project_id;
+
+		Release::create([
+			'link' => $path,
+			'version' => $version,
+			'release_note' => '',
+			'image_links' => '[]',
+			'phase' => '',
+			'platform' => $platform,
+			'uploader_id' => '2',
+			'project_id' => $project_id
+		 ]);
 
 		return json_encode('ok');
 	}
@@ -105,5 +127,13 @@ class ReleaseController extends Controller {
 		}
 
 		return $releases;
+	}
+
+	private function getFileExtension($file_name) {
+		return substr($file_name, -3);
+	}
+
+	private function getFileNameWithoutExtension($file_name) {
+		return substr($file_name, 0, strlen($file_name) - 4);
 	}
 }

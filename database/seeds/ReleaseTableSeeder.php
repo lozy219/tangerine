@@ -12,7 +12,7 @@ class ReleaseTableSeeder extends Seeder {
 	 */
 	public function run() {
 		Release::create([
-			'link' => 'http://www.google.sg',
+			'link' => '#dummy',
 			'version' => '3.5',
 			'release_note' => 'Nothing here',
 			'image_links' => '["https://www.samplestore.com/skin/frontend/default/samplestore/images/logo.png"]',
@@ -23,7 +23,7 @@ class ReleaseTableSeeder extends Seeder {
 		 ]);
 
 		Release::create([
-			'link' => 'http://www.google.sg',
+			'link' => '#dummy',
 			'version' => '3.8',
 			'release_note' => 'Nothing here',
 			'image_links' => '["https://www.samplestore.com/skin/frontend/default/samplestore/images/logo.png"]',
@@ -34,7 +34,7 @@ class ReleaseTableSeeder extends Seeder {
 		 ]);
 
 		Release::create([
-			'link' => 'http://www.google.sg',
+			'link' => '#dummy',
 			'version' => '2.5',
 			'release_note' => 'Nothing here',
 			'image_links' => '["https://www.samplestore.com/skin/frontend/default/samplestore/images/logo.png"]',
@@ -45,7 +45,7 @@ class ReleaseTableSeeder extends Seeder {
 		 ]);
 
 		Release::create([
-			'link' => 'http://www.google.sg',
+			'link' => '#dummy',
 			'version' => '4.5',
 			'release_note' => 'Nothing here',
 			'image_links' => '["https://www.samplestore.com/skin/frontend/default/samplestore/images/logo.png"]',

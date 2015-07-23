@@ -22,20 +22,18 @@ angular
 		'perfect_scrollbar',
 		'ngFileUpload'
 	])
-	.config(function ($routeProvider) {
+	.config(['$routeProvider', function ($routeProvider) {
 		$routeProvider
 			.when('/', {
 				templateUrl: 'views/home/home.html'
 			})
-			// .when('/upload', {
-			// 	templateUrl: 'views/upload.html',
-			// 	controller: 'UploadCtrl',
-			// 	css: 'styles/upload/upload.css'
-			// })
+			.when('/dummy', {
+				templateUrl: 'views/home/dummy_product.html'
+			})
 			.otherwise({
 				redirectTo: '/'
 			});
-	})
+	}])
 	.directive('head', ['$rootScope', '$compile',
 		function($rootScope, $compile){
 			return {

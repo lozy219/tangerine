@@ -63,4 +63,23 @@ class ProjectController extends Controller {
 
 		return response()->json($projects);
 	}
+
+	public function getProjectByName($project_name) {
+		$project = Project::where('title', $project_name)->first();
+		return $project;
+	}
+
+	public function findOrCreateProjectName($project_name) {
+		$project = $this->getProjectByName($project_name);
+		if ($project) {
+			return $project;
+		} else {
+			return Project::create([
+				'title' => $project_name,
+				'logo' => '',
+				'tag' => '[]',
+				'client_id' => '1',
+			]);
+		}
+	}
 }

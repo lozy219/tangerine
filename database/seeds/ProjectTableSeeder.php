@@ -12,10 +12,10 @@ class ProjectTableSeeder extends Seeder {
 	 */
 	public function run() {
 		Project::create([
-			'title' => 'SampleStore',
-			'logo' => 'https://www.samplestore.com/skin/frontend/default/samplestore/images/logo.png',
-			'tag' => '["shop", "sample"]',
-			'client_id' => '1',
+			'title' => 'Dummy Project',
+			'logo' => 'http://we.dont.need.this',
+			'tag' => '["and", "this"]',
+			'client_id' => '2',
 		 ]);	
 	}
 }

@@ -11,7 +11,7 @@
 	<div class="row-platform">
 		<div class="row" ng-if="Utils.keys(project.release).length == 2">
 			<div class="col-xs-6 ios-half left-half download-cell" 
-				ng-click="downloadRedirect(project.release.ios[0].link, release.version, 'iOS')"
+				ng-click="downloadRedirect(project.release.ios[0].link, project.release.ios[0].version, 'iOS')"
 			>
 				<div class="version-number">
 					v{{ project.release.ios[0].version }}
@@ -22,7 +22,7 @@
 			</div>
 
 			<div class="col-xs-6 android-half right-half download-cell"
-				ng-click="downloadRedirect(project.release.android[0].link, release.version, 'Android')"
+				ng-click="downloadRedirect(project.release.android[0].link, project.release.ios[0].version, 'Android')"
 			>
 				<div class="version-number">
 					v{{ project.release.android[0].version }}
@@ -35,7 +35,7 @@
 		<div class="row" ng-if="Utils.keys(project.release).length == 1">
 			<div class="col-xs-12 full-cell download-cell"
 				ng-if="getPlatform(project) == 'ios'"
-				ng-click="downloadRedirect(project.release.ios[0].link, release.version, 'iOS')"
+				ng-click="downloadRedirect(project.release.ios[0].link, project.release.ios[0].version, 'iOS')"
 			>
 				<div class="version-number">
 					v{{ project.release.ios[0].version }}
@@ -47,7 +47,7 @@
 
 			<div class="col-xs-12 full-cell download-cell"
 				ng-if="getPlatform(project) == 'android'"
-				ng-click="downloadRedirect(project.release.android[0].link, release.version, 'Android')"
+				ng-click="downloadRedirect(project.release.android[0].link, project.release.ios[0].version, 'Android')"
 			>
 				<div class="version-number">
 					v{{ project.release.android[0].version }}

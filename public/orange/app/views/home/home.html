@@ -77,7 +77,11 @@
 		</div>
 
 		<ul masonry="true">
-			<li class="animate-cell" ng-repeat="project in projects | filter : {title : titleFilter}" ng-controller="ProjectCellCtrl" ng-init="projectId = project.id">
+			<li class="animate-cell" 
+				ng-repeat="project in projects | filter : {title : titleFilter}" 
+				ng-controller="ProjectCellCtrl" 
+				ng-init="projectId = project.id; projectTitle = project.title;"
+			>
 				<div ng-include="'views/home/project-cell.html'">
 				</div>
 			</li>

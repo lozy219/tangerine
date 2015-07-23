@@ -54,10 +54,11 @@ angular.module('orangeApp')
 		$scope.downloadRedirect = function(link, version, platform) {
 			SweetAlert.swal({
 				title: 'Are you sure?',
-				text: 'You are trying to download ' + $scope.title + ' v' + version +' for ' + platform,
+				text: 'You are trying to download ' + $scope.projectTitle + ' v' + version +' for ' + platform,
 				type: 'warning',
 				showCancelButton: true,
-				confirmButtonColor: '#DD6B55',confirmButtonText: 'Yes, download it!',
+				confirmButtonColor: '#DD6B55', 
+				confirmButtonText: 'Yes, download it!',
 				cancelButtonText: 'No, cancel pls!',
 				closeOnConfirm: false,
 				closeOnCancel: false 

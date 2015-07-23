@@ -127,6 +127,12 @@
 			}
 
 			.download-cell {
+				div {
+					&:focus {
+						outline: none;
+					}
+				}
+
 				&:focus {
 					outline: none;
 				}

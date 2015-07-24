@@ -30,10 +30,17 @@ angular
 				templateUrl: 'views/home/home.html'
 			})
 			.when('/dummy', {
-				templateUrl: 'views/home/dummy_product.html'
+				templateUrl: 'views/home/dummy_product.html',
+				access: {
+					isFree: true
+				}
 			})
 			.when('/login', {
-				templateUrl: 'views/login/login.html'	
+				templateUrl: 'views/login/login.html',
+				controller: 'LoginCtrl',
+				access: {
+					isFree: true
+				}
 			})
 			.otherwise({
 				redirectTo: '/'
@@ -128,6 +135,17 @@ angular
 			}
 		};
 	})
+	.directive('checkUser', ['$rootScope', '$location', 'UserService', function ($rootScope, $location, UserService) {
+		return {
+			link: function () {
+				$rootScope.$on('$routeChangeStart', function(e, next){
+					if ((typeof next.access === 'undefined' || !next.access.isFree) && !UserService.isAdmin) {
+						$location.url('login');
+					}
+				});
+			}
+		};
+	}])
 	.factory('UserService', [function() {
 		var user = {
 			isAdmin: false

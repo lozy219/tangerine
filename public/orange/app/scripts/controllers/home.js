@@ -8,7 +8,7 @@
  * Controller of the orangeApp
  */
 angular.module('orangeApp')
-	.controller('HomeCtrl', ['$scope', 'Upload', '$http', '$location', 'SweetAlert', function ($scope, Upload, $http, $location, SweetAlert) {
+	.controller('HomeCtrl', ['$scope', 'Upload', '$http', 'SweetAlert', function ($scope, Upload, $http, SweetAlert) {
 
 		$scope.loadData = function() {
 			$http.get($scope.Constants.apiBaseUrl + 'full_project')

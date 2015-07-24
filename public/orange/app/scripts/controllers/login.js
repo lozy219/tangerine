@@ -8,7 +8,7 @@
  * Controller of the orangeApp
  */
 angular.module('orangeApp')
-	.controller('LoginCtrl', ['$scope', '$http', 'UserService', 'md5', 'SweetAlert', function ($scope, $http, UserService, md5, SweetAlert) {
+	.controller('LoginCtrl', ['$scope', '$location', '$http', 'UserService', 'md5', 'SweetAlert', function ($scope, $location, $http, UserService, md5, SweetAlert) {
 		$scope.$watch('adminPassword', function(newValue) {
 				if (typeof newValue !== 'undefined'  && newValue.length === 14) {
 					$scope.login();
@@ -23,6 +23,7 @@ angular.module('orangeApp')
 					if (data.status) {
 						SweetAlert.swal('login successfully', '', 'success');
 						UserService.isAdmin = true;
+						$location.url('/');
 					} else {
 						UserService.isAdmin = false;
 					}

@@ -24,26 +24,9 @@
 		<![endif]-->
 
 		<!-- Add your site or application content here -->
-		<div class="header">
-			<div class="codigo-logo">
-				<a href="#/"><img src="images/codigo.png" alt="logo"></a>
-			</div>
 
-			<div class="search-bar">
-				<input type="text" class="form-control" placeholder="SEARCH" ng-model="titleFilter" ng-model-options="{ debounce: 300 }" >
-			</div>
+		<div ng-view>
 		</div>
-
-		<div class="side-menu">
-
-		</div>
-
-		<div class="main" ng-view>
-		</div>
-
-		<div class="footer">
-		</div>
-
 
 		<!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
 		 <script>
@@ -98,6 +81,7 @@
 		<script src="scripts/controllers/home.js"></script>
 		<script src="scripts/controllers/project-cell.js"></script>
 		<script src="scripts/controllers/login.js"></script>
+		<script src="scripts/controllers/project.js"></script>
 		<!-- endbuild -->
 	</body>
 </html>

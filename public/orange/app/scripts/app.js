@@ -42,6 +42,13 @@ angular
 					isFree: true
 				}
 			})
+			.when('/project/:projectKey', {
+				templateUrl: 'views/project/project.html',
+				controller: 'ProjectCtrl',
+				access: {
+					isFree: true
+				}	
+			})
 			.otherwise({
 				redirectTo: '/'
 			});

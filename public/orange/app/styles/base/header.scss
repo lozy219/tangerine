@@ -8,3 +8,12 @@
 	background-color: $header-color;
 	z-index: 100;
 }
+
+.project-header {
+	height: $header-height;
+	width: 100vw;
+	position: fixed;
+	top: 0px;
+	background-color: $logo-color;
+	z-index: 100;	
+}

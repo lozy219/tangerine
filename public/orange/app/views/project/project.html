@@ -1,86 +1,10 @@
-<ng-include src="'views/base.html'">
+<ng-include src="'views/project/base.html'">
 </ng-include>
 
-<div class="main">
-	<div class="section-home" ng-controller="HomeCtrl">
-		<div class="subsection-upload">
-			<div class="upload-dropbox"
-				ngf-drop
-				ng-init="uploadedFiles = []; rejectedFiles = []; fileVersion = {};"
-				ng-model="uploadedFiles"
-				ng-model-rejected="rejectedFiles"
-				ngf-change="fileDropped($files, $event, $rejectedFiles)"
-				ngf-multiple="false"
-				ngf-accept="'.apk,.ipa'"
-				ngf-allow-dir="true"
-				ngf-drag-over-class="'dragover'"
-				ngf-drop-available="dropSupported"
-				ngf-stop-propagation="true"
-				ngf-hide-on-drop-not-available="false"
-			>
-				<div class="col-logos">
-					<div class="logo logo-ios">
-						<img src="images/upload/ios-grey.png">
-					</div>
-					<div class="logo logo-android">
-						<img src="images/upload/android-grey.png">
-					</div>
-				</div>
-
-				<div class="col-text">
-					<span ng-if="uploadedFiles.length == 0 || rejectedFiles.length !== 0">
-						DROP FILES TO UPLOAD
-					</span>
-					<span ng-if="uploadedFiles.length !== 0 && rejectedFiles.length == 0">
-						<span ng-if="uploadedFiles[0].name.length <= 13">
-							{{ uploadedFiles[0].name | uppercase }}
-						</span>
-						<span ng-if="uploadedFiles[0].name.length > 13">
-							{{ uploadedFiles[0].name | uppercase | limitTo : 13 }}...
-						</span>
-						<span class="upload-cross" ng-click="$parent.uploadedFiles = []; $parent.rejectedFiles = [];">
-						</span>
-					</span>
-				</div>
-
-				<div class="col-field">
-					<span ng-if="uploadedFiles.length !== 0 && rejectedFiles.length == 0">
-						<input class="version-number-field" 
-							type="text" 
-							placeholder="version number"
-							ng-model="fileVersion.version" 
-							ngRequired="true"
-						>
-					</span>
-				</div>
-
-				<div class="col-button" 
-					ngf-select
-					ngf-multiple="false" 
-					ngf-accept="'.apk,.ipa'"
-					accept=".apk,.ipa"
-					ng-model="uploadedFiles"
-					ng-model-rejected="rejectedFiles"
-					ng-if="uploadedFiles.length === 0 || rejectedFiles.length !== 0"
-				>
-					BROWSE FOR FILES
-				</div>
-
-				<div class="col-button" 
-					ng-if="uploadedFiles.length !== 0 && rejectedFiles.length === 0"
-					ng-click="upload(uploadedFiles[0], fileVersion.version)"
-				>
-					UPLOAD
-				</div>
-			</div>
-		</div>
-		
+<div class="main no-sidebar">
+	<div class="section-project" ng-controller="HomeCtrl">
 		<div class="subsection-list">
-			<div class="title-subsection">
-				LATEST PROJECT
-			</div>
-
-			<ul masonry="true">
+			<ul>
 				<li class="animate-cell" 
 					ng-repeat="project in projects | filter : {title : titleFilter}" 
 					ng-controller="ProjectCellCtrl" 

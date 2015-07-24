@@ -9,9 +9,9 @@
 
 body {
 	background-color: $body-color;
-
-	.main {
-		margin-top: $header-height + $container-padding;
+	margin-top: $header-height + $container-padding;
+	
+	.main:not(.no-sidebar) {
 		padding-left: $side-menu-width + $container-padding;
 	}
 

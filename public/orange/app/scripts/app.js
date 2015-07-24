@@ -21,7 +21,8 @@ angular
 		'ui.sortable',
 		'perfect_scrollbar',
 		'ngFileUpload',
-		'oitozero.ngSweetAlert'
+		'oitozero.ngSweetAlert',
+		'angular-md5'
 	])
 	.config(['$routeProvider', function ($routeProvider) {
 		$routeProvider
@@ -127,6 +128,12 @@ angular
 			}
 		};
 	})
+	.factory('UserService', [function() {
+		var user = {
+			isAdmin: false
+		};
+		return user;
+	}])
 	.run(function($rootScope) {
 		$rootScope.Utils = {
 			keys: Object.keys

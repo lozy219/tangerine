@@ -23,9 +23,6 @@ angular.module('orangeApp')
 		$scope.loadData();
 
 		$scope.upload = function (file, version) {
-			console.log(file);
-			console.log(version);
-
 			var fd = new FormData();
 			fd.append('file', file);
 			fd.append('version', version);
@@ -43,7 +40,7 @@ angular.module('orangeApp')
 					$scope.loadData();
 				})
 				.error(function() {
-					// alert('fail');
+					SweetAlert.swal('upload failed', '', 'error');
 				});
 		};
 

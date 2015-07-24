@@ -18,7 +18,8 @@
     "jquery.masonry": "*",
     "angular-perfect-scrollbar": "~0.0.4",
     "ng-file-upload": "~5.0.9",
-    "angular-sweetalert": "~1.1.0"
+    "angular-sweetalert": "~1.1.0",
+    "angular-md5": "~0.1.7"
   },
   "overrides": {
     "outlayer": {

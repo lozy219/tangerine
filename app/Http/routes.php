@@ -40,4 +40,6 @@ $app->group(['prefix' => 'api', 'namespace' => 'App\Http\Controllers'], function
 	$app->post('release', 'ReleaseController@createRelease');
 	$app->put('release/{id}', 'ReleaseController@updateRelease');
 	$app->delete('release/{id}', 'ReleaseController@deleteRelease');
+
+	$app->post('login', 'CommonController@authenticate');
 });

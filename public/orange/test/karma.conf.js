@@ -51,6 +51,7 @@ module.exports = function(config) {
       'bower_components/ng-file-upload/ng-file-upload.js',
       'bower_components/sweetalert/dist/sweetalert.min.js',
       'bower_components/angular-sweetalert/SweetAlert.js',
+      'bower_components/angular-md5/angular-md5.js',
       'bower_components/angular-mocks/angular-mocks.js',
       // endbower
       "app/scripts/**/*.js",

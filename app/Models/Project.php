@@ -27,6 +27,7 @@ class Project extends Model {
 		'title',
 		'logo',
 		'tag',
+		'key',
 		'client_id'
 	];
 }

@@ -78,6 +78,7 @@ class ProjectController extends Controller {
 				'title' => $project_name,
 				'logo' => '',
 				'tag' => '[]',
+				'key' => str_shuffle(MD5(microtime())),
 				'client_id' => '1',
 			]);
 		}

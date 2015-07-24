@@ -15,6 +15,7 @@ class ProjectTableSeeder extends Seeder {
 			'title' => 'Dummy Project',
 			'logo' => 'http://we.dont.need.this',
 			'tag' => '["and", "this"]',
+			'key' => str_shuffle(MD5(microtime())),
 			'client_id' => '2',
 		 ]);	
 	}

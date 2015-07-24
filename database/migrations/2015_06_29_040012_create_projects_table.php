@@ -17,6 +17,7 @@ class CreateProjectsTable extends Migration {
             $table->string('title');
             $table->string('logo');
             $table->string('tag');
+            $table->string('key'); // for sharing to clients
 
             $table->integer('client_id')->unsigned();
             $table->foreign('client_id')->references('id')->on('clients');
